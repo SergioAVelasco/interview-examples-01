@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [insterval, setInsterval] = useState(0);
 
   const handleClick = (range: number) => {
@@ -10,7 +10,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    setCount(0);
+    setCount(1);
     if (insterval === 0) return;
     const interval = setInterval(() => {
       setCount((count) => count + 1);
