@@ -26,3 +26,17 @@ Modify the page.tsx file inside the app folder to meet the following conditions.
 - When clicking on the Stop button, the counter should be set to 1, and it should no longer be incremented.
 
 This test should be solved on max 60 minutes, Good luck ~
+
+## Expected output
+1 sec increment
+
+https://github.com/SergioAVelasco/interview-examples-01/assets/2586947/4b44cbdf-4f25-4b69-a5c6-943fd440d7a3
+
+3 secs increment
+
+https://github.com/SergioAVelasco/interview-examples-01/assets/2586947/bf3aeb2d-5274-4b77-b9cd-7dd2d8603845
+
+Stop 
+
+https://github.com/SergioAVelasco/interview-examples-01/assets/2586947/4b0ed1cf-a487-4bee-875c-ae418d6d4263
+
