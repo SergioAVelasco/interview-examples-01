@@ -1,12 +1,22 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [count, setCount] = useState(0);
+  const [insterval, setInsterval] = useState(0);
 
   const handleClick = (range: number) => {
-    setCount(range);
+    setInsterval(range);
   };
+
+  useEffect(() => {
+    setCount(0);
+    if (insterval === 0) return;
+    const interval = setInterval(() => {
+      setCount((count) => count + 1);
+    }, insterval * 1000);
+    return () => clearInterval(interval);
+  }, [insterval]);
 
   const buttonsClass = "bg-red-400 w-20 p-2 rounded-md text-white font-bold";
   return (
