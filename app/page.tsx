@@ -3,10 +3,22 @@ import { useState } from "react";
 
 export default function Home() {
   const [count, setCount] = useState(0);
+  const [intervalId, setIntervalId] = useState(0);
 
   const handleClick = (range: number) => {
-    setCount(range);
+    setCount(1);
+    if(intervalId){
+      clearInterval(intervalId);
+    }
+      const idInterval = window.setInterval(()=>{ setCount(count => count+1)}, (range * 1000));
+      setIntervalId(idInterval);
   };
+  
+  const handleStop =() =>{
+    setCount(1);
+    clearInterval(intervalId);
+    setIntervalId(0);
+  }
 
   const buttonsClass = "bg-red-400 w-20 p-2 rounded-md text-white font-bold";
   return (
@@ -22,7 +34,7 @@ export default function Home() {
             <button className={buttonsClass} onClick={() => handleClick(3)}>
               3
             </button>
-            <button className={buttonsClass} onClick={() => handleClick(0)}>
+            <button className={buttonsClass} onClick={() => handleStop()}>
               Stop
             </button>
           </div>
